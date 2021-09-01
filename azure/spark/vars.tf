@@ -22,3 +22,13 @@ variable "tags" {
 
   }
 }
+
+locals {
+  tags_k8s = merge(var.tags, {
+    k8s = "true",
+  })
+}
+
+variable "ssh_public_key" {
+    default = "~/.ssh/id_rsa.pub"
+}

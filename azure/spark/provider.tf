@@ -33,3 +33,9 @@ resource "azurerm_storage_account" "tfstate" {
 provider "azurerm" {
   features {}
 }
+
+provider "helm" {
+  kubernetes {
+    config_path = "${path.module}/.kube/config_zure_k8s"
+  }
+}
